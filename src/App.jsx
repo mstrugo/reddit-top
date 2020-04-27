@@ -6,14 +6,14 @@ import { Article, List } from './components';
 const App = () => {
   return (
     <Grid container>
+      <Grid item xs={12} sm={4}>
+        <Route component={List} />
+      </Grid>
       <Route path='article/:id'>
         <Grid item xs={12} sm={8}>
           <Article />
         </Grid>
       </Route>
-      <Grid item xs={12} sm={4}>
-        <Route component={List} />
-      </Grid>
     </Grid>
   );
 }
