@@ -6,7 +6,10 @@ import { createStore } from 'redux';
 import App from './App';
 import { reducers } from './duck';
 
-const store = createStore(reducers.rootReducer);
+const store = createStore(
+  reducers.rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <StrictMode>

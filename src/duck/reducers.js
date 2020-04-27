@@ -8,7 +8,10 @@ const initState = {
 const reducers = (state = initState, action) => {
   switch (action.type) {
     case types.SAVE_POSTS:
-      state.posts.push(action.payload.fetchedPosts);
+      state.posts = [
+        ...state.posts,
+        action.payload.fetchedPosts.default.data.children,
+      ];
       return state;
 
     case types.SET_ACTIVE:
